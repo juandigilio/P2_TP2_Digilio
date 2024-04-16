@@ -1,4 +1,0 @@
-﻿  String.cpp
-C:\Users\juani\OneDrive\Documentos\GitHub\P2_TP2_Digilio\P2_Vectores\Ex_1\String.cpp(33,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\juani\OneDrive\Documentos\GitHub\P2_TP2_Digilio\P2_Vectores\Ex_1\String.cpp(161,27): warning C4018: '<': signed/unsigned mismatch
-  Ex_1.vcxproj -> C:\Users\juani\OneDrive\Documentos\GitHub\P2_TP2_Digilio\P2_Vectores\x64\Debug\Ex_1.exe
