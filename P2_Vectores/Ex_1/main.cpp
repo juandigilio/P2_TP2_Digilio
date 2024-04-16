@@ -5,17 +5,18 @@
 
 void main()
 {
-	String myString("Hola, yo soy un string");
-	String otherString("y yo me vengo a sumar");
+	//String myString("Hola, yo soy un string");
+	//String otherString("y yo me vengo a sumar");
+	String hellow("Hellow");
 
-	String sum = myString + otherString;
+	//String sum = myString + otherString;
 	//sum.Print();
 
-	String charSum = myString + "y yo tambien me quiero sumar";
+	//String charSum = myString + "y yo tambien me quiero sumar";
 	//charSum.Print();
 
 	//myString += otherString;
-	myString += "y yo otro que se suma en fomra de array de chars";
+	//myString += "y yo otro que se suma en fomra de array de chars";
 	//myString.Print();
 
 	String smaller("abc");
@@ -24,6 +25,10 @@ void main()
 	std::cout << (smaller < bigger);
 	std::cout << std::endl;
 	std::cout << (smaller > bigger);
+
+	//hellow * 4;
+
+	//hellow.Print();
 
 	std::cin.get();
 }

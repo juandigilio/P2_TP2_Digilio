@@ -30,13 +30,16 @@ void String::Print()
 
 char* String::ToChar()
 {
-    char* thisChain = new char[data.size()];
+    int size = data.size();
+
+    char* thisChain = new char[size + 1];
 
     for (size_t i = 0; i < data.size(); ++i)
     {
         thisChain[i] = data[i];
     }
 
+    thisChain[size] = '\0';
 
     return thisChain;
 }
@@ -99,17 +102,21 @@ int String::operator < (String other)
 {
     char* thisChain = ToChar();
     char* otherChain = other.ToChar();
+    
+    while (*thisChain && *otherChain && *thisChain == *otherChain) 
+    {
+        ++thisChain;
+        ++otherChain;
+    }
 
-    int result = std::strcmp(thisChain, otherChain);
-        
-    if (result < 0) 
+    if (*thisChain < *otherChain) 
     {
         return 1;
     }
-    else if (result > 0) 
+    else if (*thisChain > *otherChain) 
     {
         return -1;
-    }  
+    }
     else 
     {
         return 0;
@@ -121,13 +128,17 @@ int String::operator>(String other)
     char* thisChain = ToChar();
     char* otherChain = other.ToChar();
 
-    int result = std::strcmp(thisChain, otherChain);
+    while (*thisChain && *otherChain && *thisChain == *otherChain)
+    {
+        ++thisChain;
+        ++otherChain;
+    }
 
-    if (result < 0)
+    if (*thisChain < *otherChain)
     {
         return -1;
     }
-    else if (result > 0)
+    else if (*thisChain > *otherChain)
     {
         return 1;
     }
@@ -145,11 +156,11 @@ void String::operator*(unsigned int qnty)
     }
     else
     {
-        String temp;
+        String temp{};
 
         for (int i = 0; i < qnty; i++)
         {
-            temp += ToChar();
+            temp += this->ToChar();
         }
 
         this->data = temp.data;
